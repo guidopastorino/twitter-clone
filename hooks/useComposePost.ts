@@ -50,6 +50,7 @@ const useComposePost = () => {
 
   const handlePostSubmit = async () => {
     const post: PostType = {
+      _id: "",
       author_id: user._id,
       description: text,
       files: [],
