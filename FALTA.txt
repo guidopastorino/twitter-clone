@@ -1,0 +1,3 @@
+- poner el who can reply como un hook para usarlo en cualquier parte que se desee cambiar el estado del post
+- añadir al tipo PostType que tipo es (post | reel | video....)
+- Refactorizar useMakeComment (componentes usados)

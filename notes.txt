@@ -1,0 +1,82 @@
+# Paquetes necesarios para el frontend de la red social
+
+## General
+- **React**: Biblioteca principal para construir interfaces de usuario.
+- **Next.js**: Framework de React para aplicaciones web optimizadas.
+
+## Fetch Data
+- **axios**: Cliente HTTP para realizar peticiones a la API.
+  - `npm install axios`
+- **react-query**: Biblioteca para la gestión de estado asíncrono.
+  - `npm install react-query`
+
+## Theme
+- **next-themes**: Biblioteca para gestionar temas en aplicaciones Next.js.
+  - `npm install next-themes`
+
+## Autenticación
+- **next-auth**: Biblioteca para manejar la autenticación en Next.js.
+  - `npm install next-auth`
+
+## Gestión de Estado
+- **redux**: Biblioteca para la gestión del estado global.
+  - `npm install redux react-redux`
+- **@reduxjs/toolkit**: Conjunto de herramientas para simplificar la configuración de Redux.
+  - `npm install @reduxjs/toolkit`
+
+## Cookies
+- **js-cookie**: Biblioteca para manejar cookies.
+  - `npm install js-cookie`
+- **react-cookie**: Biblioteca para manejar cookies.
+  - `npm install react-cookie`
+
+## Formularios
+- **react-hook-form**: Biblioteca para manejar formularios.
+  - `npm install react-hook-form`
+- **yup**: Biblioteca para la validación de esquemas.
+  - `npm install yup`
+
+## Estilo
+- **tailwindcss**: Biblioteca de utilidades CSS.
+  - `npm install tailwindcss`
+- **styled-components**: Biblioteca para estilos en componentes.
+  - `npm install styled-components`
+
+## Socket.io
+- **socket.io-client**: Biblioteca para manejar la comunicación en tiempo real.
+  - `npm install socket.io-client`
+
+## Upload de Archivos
+- **react-dropzone**: Biblioteca para manejar la carga de archivos.
+  - `npm install react-dropzone`
+
+## Viewer de PDF
+- **@react-pdf-viewer**: Biblioteca para visualizar archivos PDF.
+  - `npm install @react-pdf-viewer`
+
+## Manejo de Imágenes
+- **react-image-crop**: Biblioteca para recortar imágenes.
+  - `npm install react-image-crop`
+
+## Notificaciones
+- **react-toastify**: Biblioteca para manejar notificaciones.
+  - `npm install react-toastify`
+
+## Carousels y Sliders
+- **react-slick**: Biblioteca para carousels y sliders.
+  - `npm install react-slick`
+- **slick-carousel**: Dependencia de estilos para react-slick.
+  - `npm install slick-carousel`
+
+## Utilidades
+- **lodash**: Biblioteca de utilidades para JavaScript.
+  - `npm install lodash`
+- **dayjs**: Biblioteca para manejar fechas.
+  - `npm install dayjs`
+
+## Hooks
+- useOptimistic (for live likes updates)
+
+## Imágenes del post
+- React Photo Collage: Genera una vista estilo collage para las fotos
+  - `npm i react-photo-collage`
