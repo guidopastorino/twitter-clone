@@ -3,6 +3,7 @@ import { UserType } from "@/types/types";
 
 // Estado inicial usando el tipo simplificado UserType
 const initialState: UserType = {
+  _id: "",
   fullname: '',
   username: '',
   email: 'defaultemail@example.com',
@@ -20,6 +21,7 @@ const initialState: UserType = {
     likes: [],
     comments: []
   },
+  location: "",
   followers: [],
   highlights: [],
   following: [],
