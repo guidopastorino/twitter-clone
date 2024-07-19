@@ -1,10 +1,10 @@
 "use client"
 
+import PostComment from '@/components/Posts/PostComment'
 import { CommentsActivity } from '@/types/types'
 import { fetchUserComments } from '@/utils/api/fetchFunctions'
 import React from 'react'
 import { useQuery } from 'react-query'
-import { PostComment } from '../../post/[postId]/page'
 
 const page = ({ params }: { params: { username: string } }) => {
   const { data: userComments, isLoading, error } = useQuery<CommentsActivity[], Error>(
