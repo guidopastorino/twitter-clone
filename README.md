@@ -20,6 +20,10 @@ This is a full-featured social networking application inspired by Twitter. Users
 
 <br />
 
+![Image](./public/read-me-images/Captura%20de%20pantalla%202024-07-18%20230942.png)
+
+<br />
+
 ![Image](./public/read-me-images/Captura%20de%20pantalla%202024-07-18%20225821.png)
 
 <br />
