@@ -11,7 +11,6 @@ interface IPost extends Document {
   comments: Types.ObjectId[];
   saved: Types.ObjectId[]; // Array of _id Types.ObjectId (saved by)
   whoCanReply: WhoCanReplyPost;
-  viewedBy: Types.ObjectId[];
   repostedBy: Types.ObjectId[];
   bookmarks: Types.ObjectId[];
 }
@@ -70,11 +69,6 @@ const PostSchema: Schema = new Schema(
       type: String,
       enum: ['Everyone', 'Accounts you follow', 'Verified accounts', 'Only accounts you mention'],
       default: 'Everyone',
-    },
-    viewedBy: {
-      type: [Schema.Types.ObjectId],
-      required: true,
-      default: []
     },
     repostedBy: {
       type: [Schema.Types.ObjectId],

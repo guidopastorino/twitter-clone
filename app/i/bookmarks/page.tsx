@@ -8,9 +8,7 @@ import { PostType } from '@/types/types'
 import axios from 'axios'
 import { useSession } from 'next-auth/react'
 import React, { useEffect } from 'react'
-import { BsThreeDots } from 'react-icons/bs'
-import { CgArrowLeft } from 'react-icons/cg'
-import { IoSearchOutline } from 'react-icons/io5'
+import { BsThreeDots, CgArrowLeft, IoSearchOutline } from '@/constants/icons'
 import { useQuery, useMutation, useQueryClient } from 'react-query'
 
 // id: user id

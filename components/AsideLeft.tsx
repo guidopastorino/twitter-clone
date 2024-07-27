@@ -81,8 +81,8 @@ const AsideLeft = () => {
     <aside className='overflow-y-auto overflow-x-hidden sticky top-0 h-dvh py-2 lg:flex px-2'>
       <div className='w-full h-full flex flex-col justify-between items-center'>
         <div className='w-full flex flex-col justify-center items-center'>
-          <div className='w-full flex justify-center lg:justify-start items-center py-3'>
-            <Link href={"/i"} className='active:scale-95 duration-100 w-13 h-13 flex justify-center items-center rounded-full dark:hover:bg-neutral-900 hover:bg-gray-50 p-3'>
+          <div className='shrink-0 w-full flex justify-center lg:justify-start items-center py-3'>
+            <Link href={"/i"} className='shrink-0 active:scale-95 duration-100 w-13 h-13 flex justify-center items-center rounded-full dark:hover:bg-neutral-900 hover:bg-gray-50 p-3'>
               <LogoSVG />
             </Link>
           </div>

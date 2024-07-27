@@ -6,25 +6,17 @@ import { useRouter } from 'next/navigation';
 import Link from 'next/link';
 import Modal from './Modal';
 import { useModal } from '@/hooks/useModal';
-import PostAnalytics from './RouteModals/PostAnalytics';
 import { PostType, UserType } from '@/types/types';
 import axios from 'axios';
 import useToast from '@/hooks/useToast';
 import { useMutation, useQuery, useQueryClient } from 'react-query';
 import Loader from '@/components/Loader';
 import { useSession } from 'next-auth/react';
-// share post icons
-import { BsFacebook, BsLinkedin, BsRecord, BsTelegram, BsThreeDots, BsTwitter, BsWhatsapp } from 'react-icons/bs';
-// post btns icons
-import { FaRegHeart, FaHeart } from "react-icons/fa";
-import { RiChat3Line } from "react-icons/ri";
-import { PiShareFat } from "react-icons/pi";
-import { TbAntennaBars5 } from "react-icons/tb";
-import { GoBookmark, GoBookmarkFill } from "react-icons/go";
-import { PiArrowsClockwise } from "react-icons/pi";
-import CommentPost from './RouteModals/CommentPost';
 import Time from './Time';
 import HashWords from './HashWords';
+import CommentPost from './RouteModals/CommentPost';
+import { FaRegHeart, FaHeart, BsFacebook, BsLinkedin, BsRecord, BsTelegram, BsThreeDots, BsTwitter, BsWhatsapp, RiChat3Line, PiShareFat, TbAntennaBars5, GoBookmark, GoBookmarkFill, PiArrowsClockwise } from "@/constants/icons";
+
 
 export const PostSkeleton = () => (
   <div className='w-full max-w-screen-sm mx-auto p-2 flex justify-center items-start gap-2 outline outline-1 outline-gray-200 dark:outline-neutral-800 duration-100 dark:hover:bg-neutral-900 hover:bg-gray-50 post-skeleton-effect'>
@@ -60,7 +52,7 @@ const Post = forwardRef<HTMLDivElement, PostType>(({ _id, author_id, date, descr
     const target = (event.target as HTMLElement)
     const ignoreRedirectsTags = ['BUTTON', 'A', 'SPAN', 'P', 'SVG']
 
-    if(ignoreRedirectsTags.includes(target.tagName)){
+    if (ignoreRedirectsTags.includes(target.tagName)) {
       return;
     }
 
@@ -76,7 +68,7 @@ const Post = forwardRef<HTMLDivElement, PostType>(({ _id, author_id, date, descr
     <div
       ref={ref}
       onClick={handleClick}
-      className='w-full max-w-screen-sm mx-auto p-2 flex justify-center items-start gap-2 outline outline-1 outline-gray-200 dark:outline-neutral-800 duration-100 dark:hover:bg-neutral-900 hover:bg-gray-50 cursor-pointer'
+      className='w-full max-w-screen-sm mx-auto p-2 flex justify-center items-start gap-2 duration-100 hover:bg-gray-50 cursor-pointer rounded-md mb-3 shadow-md bg-white dark:bg-neutral-800 hover:brightness-90'
     >
       <HoverCardDetails trigger={<Link href={`/i/${author.username}`} className='shrink-0'>
         <img src={author.profileImage || "/default_profile_picture.jpg"} className='w-10 h-10 rounded-full object-cover self-start' alt="profile picture" />
@@ -85,10 +77,10 @@ const Post = forwardRef<HTMLDivElement, PostType>(({ _id, author_id, date, descr
       <div className='flex flex-col justify-start items-center gap-3 w-full'>
         <div className='flex justify-between items-center gap-2 w-full'>
           <p className='flex justify-center items-center gap-1 truncate line-clamp-1'>
-            <span className='font-medium'>{author.fullname}</span>
-            <span className='dark:text-neutral-500 text-neutral-400'>@{author.username}</span>
-            <span className='dark:text-neutral-500 text-neutral-400'>·</span>
-            {date && <span className='dark:text-neutral-500 text-neutral-400'><Time timestamp={date} /></span>}
+            <span className='font-medium text-black'>{author.fullname}</span>
+            <span className='dark:text-neutral-500 text-black'>@{author.username}</span>
+            <span className='dark:text-neutral-500 text-black'>·</span>
+            {date && <span className='dark:text-neutral-500 text-black'><Time timestamp={date} /></span>}
           </p>
           <DropdownMenu button={<button className="w-8 h-8 flex justify-center items-center rounded-full hover:dark:bg-[#031018]"><BsThreeDots /></button>}>{(MenuRef, menu, setMenu) => (
             <>
@@ -107,7 +99,6 @@ const Post = forwardRef<HTMLDivElement, PostType>(({ _id, author_id, date, descr
             <span>{comments.length}</span>
           </div>
           <PostInteractionButton icon={<PiArrowsClockwise />} dataPopup='Repost' />
-          <PostInteractionButton icon={<TbAntennaBars5 />} dataPopup='Post analytics' onClick={() => openRouteModal(<PostAnalytics />, `/${author.username}/status/${maskedId}/analytics`)} />
           <div className='flex gap-1 justify-center items-center'>
             <BookmarkPostAction _id={typeof _id != "undefined" ? _id : ""} author_id={author_id} />
             <Modal

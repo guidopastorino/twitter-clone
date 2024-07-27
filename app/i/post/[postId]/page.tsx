@@ -11,18 +11,13 @@ import React, { useEffect, useState } from 'react'
 import { useQuery } from 'react-query'
 import { useSelector } from 'react-redux'
 import { RootState } from '@/state/store'
-// 
-import { BsEmojiSmile, BsThreeDots } from 'react-icons/bs'
-import { CgArrowLeft } from 'react-icons/cg'
-import { BsFilterRight } from "react-icons/bs";
-import { RiChatOffLine } from "react-icons/ri";
 import { useRouter, useSearchParams } from 'next/navigation'
-import { IoIosLock } from "react-icons/io";
 import HashWords from '@/components/HashWords'
 import useMakeComment from '@/hooks/useMakeComment'
 import EmojiPicker, { Theme } from 'emoji-picker-react'
-import { MdOutlineCalendarMonth, MdOutlineGifBox, MdOutlineLocationOn, MdOutlinePhoto, MdOutlinePoll } from 'react-icons/md'
 import PostComment from '@/components/Posts/PostComment'
+// 
+import { BsEmojiSmile, BsThreeDots, CgArrowLeft, BsFilterRight, RiChatOffLine, IoIosLock, MdOutlineCalendarMonth, MdOutlineGifBox, MdOutlineLocationOn, MdOutlinePhoto, MdOutlinePoll } from '@/constants/icons'
 
 const Page = ({ params }: { params: { postId: string } }) => {
   // state that indicates if user can comment a post or not (depending on whoCanReply)

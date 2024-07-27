@@ -29,7 +29,7 @@ const nextConfig = {
       }
     ];
   },
-  serverComponentsExternalPackages: ["mongoose"],
+  // serverComponentsExternalPackages: ["mongoose"],
 };
 
 export default nextConfig;

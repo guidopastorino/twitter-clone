@@ -6,10 +6,9 @@ import { useSession } from 'next-auth/react';
 import React, { useEffect } from 'react';
 import { useQuery } from 'react-query';
 import Loader from '../Loader';
-import { MdOutlineCalendarMonth, MdOutlineGifBox, MdOutlineLocationOn, MdOutlinePhoto, MdOutlinePoll } from 'react-icons/md';
 import EmojiPicker, { Theme } from 'emoji-picker-react';
 import DropdownMenu from '../DropdownMenu';
-import { BsEmojiSmile } from 'react-icons/bs';
+import { MdOutlineCalendarMonth, MdOutlineGifBox, MdOutlineLocationOn, MdOutlinePhoto, MdOutlinePoll, BsEmojiSmile } from '@/constants/icons'
 import useMakeComment from '@/hooks/useMakeComment';
 
 type Props = {
@@ -39,7 +38,7 @@ const CommentPost = ({ postId, authorId }: Props) => {
 
   // al cargar el componente, establecer los estados correspondientes
   useEffect(() => {
-    if(postId && authorId){
+    if (postId && authorId) {
       setPostReplyingId(postId);
       addReplyingTo(authorId)
     }

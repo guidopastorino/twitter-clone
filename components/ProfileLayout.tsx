@@ -12,12 +12,10 @@ import { useSession } from 'next-auth/react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import React from 'react'
-import { BsThreeDots } from 'react-icons/bs';
-
-// 
-import { CgArrowLeft } from 'react-icons/cg';
-import { MdModeEditOutline } from "react-icons/md";
 import { useQuery } from 'react-query';
+// 
+import { BsThreeDots, CgArrowLeft, MdModeEditOutline } from '@/constants/icons';
+
 
 const fetchUser = async (username: string) => {
   try {

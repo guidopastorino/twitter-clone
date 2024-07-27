@@ -47,21 +47,15 @@ const ThemeButton = () => {
   {/* dropdown menu here */ }
   return (
     <>
-      {/* 
-      <DropdownMenu
-      button={<button className='w-10 h-10 flex justify-center items-center text-xl border rounded-full'>
+      <button className='w-10 h-10 flex justify-center items-center text-xl border rounded-full'>
         {currentIcon()}
-      </button>}
-    >
+      </button>
+
       <div className='shadow-lg py-1 w-max overflow-hidden rounded-lg dark:bg-neutral-800 bg-white'>
         <li onClick={() => handleThemeChange('light')} className='list-none p-2 flex justify-start items-center gap-2 hover:bg-gray-200 dark:hover:bg-neutral-900 cursor-pointer py-2 px-4'><FiSun /> <span>Light</span></li>
         <li onClick={() => handleThemeChange('dark')} className='list-none p-2 flex justify-start items-center gap-2 hover:bg-gray-200 dark:hover:bg-neutral-900 cursor-pointer py-2 px-4'><FiMoon /> <span>Dark</span></li>
         <li onClick={() => handleThemeChange('system')} className='list-none p-2 flex justify-start items-center gap-2 hover:bg-gray-200 dark:hover:bg-neutral-900 cursor-pointer py-2 px-4'><WiMoonAltFirstQuarter /> <span>System</span></li>
       </div>
-    </DropdownMenu>
-      */}
-
-      <div>theme</div>
     </>
   )
 }

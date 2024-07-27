@@ -78,7 +78,6 @@ export type PostType = {
   comments: string[];
   saved: string[];
   whoCanReply: WhoCanReplyPost;
-  viewedBy: string[];
   repostedBy: string[];
   createdAt?: string;
   updatedAt?: string;

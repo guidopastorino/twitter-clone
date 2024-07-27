@@ -3,7 +3,7 @@
 import Loader, { PagesLoader } from '@/components/Loader';
 import axios from 'axios';
 import React, { useEffect, useState } from 'react'
-import { RxCross2 } from 'react-icons/rx'
+import { RxCross2 } from '@/constants/icons'
 
 const page = ({ params }: { params: { username: string } }) => {
   const [profileImage, setProfileImage] = useState<string>("")

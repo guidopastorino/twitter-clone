@@ -7,7 +7,7 @@ const page = ({ children }: { children: React.ReactNode }) => {
     <>
       <div className='mx-auto w-full max-w-screen-xl grid grid-cols-[_80px_1fr_] lg:grid-cols-[_300px_1fr_] xl:grid-cols-[_300px_1fr_400px_]'>
         <AsideLeft />
-        <div className='border-x border-neutral-800 w-full'>
+        <div className='w-full'>
           {children}
         </div>
         <AsideRight />

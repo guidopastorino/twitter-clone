@@ -9,6 +9,20 @@ export const fetchPostData = async (postId: string): Promise<PostType> => {
   return response.data
 }
 
+// Fetch posts from 'forYou' section
+// * Pagination responses *
+export const fetchForYouPosts = async ({ pageParam = 1 }: { pageParam?: number }): Promise<PostType[]> => {
+  const response = await axios.get(`/api/posts?page=${pageParam}`);
+  return response.data;
+};
+
+// Fetch posts from 'following' section
+// * Pagination responses *
+export const fetchFollowingPosts = async ({ pageParam = 1, userId }: { pageParam?: number, userId?: string }): Promise<PostType[]> => {
+  const response = await axios.get(`/api/posts/following?page=${pageParam}`, { params: { userId } });
+  return response.data;
+};
+
 // Fetch user data
 // 'id' could be the following fields: '_id' or 'username' in order to fetch data for a user
 export const fetchUser = async (id: string) => {

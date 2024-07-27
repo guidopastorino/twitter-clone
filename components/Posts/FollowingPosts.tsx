@@ -1,41 +1,44 @@
 import { PostType } from '@/types/types';
-import React, { useEffect } from 'react';
-import Loader from '@/components/Loader';
-import Post from '@/components/Post';
+import React from 'react';
 import { useSelector } from 'react-redux';
 import { RootState } from '@/state/store';
-import { useQuery } from 'react-query';
-import axios from 'axios';
-
-const fetchFollowingPosts = async (userId: string): Promise<PostType[]> => {
-  const response = await axios.get(`/api/posts/following`, { params: { userId } });
-  return response.data;
-}
+import useInfiniteScroll from '@/hooks/useInfiniteScroll';
+import { fetchFollowingPosts } from '@/utils/api/fetchFunctions';
+import Post from '../Post';
+import Loader from '../Loader';
 
 const FollowingPosts = () => {
   const user = useSelector((state: RootState) => state.user);
+  const userId = user?._id;
 
-  const { data, error, isLoading } = useQuery<PostType[], Error>(
-    ['followingPosts', user._id],
-    () => fetchFollowingPosts(user._id as string), // Asegúrate de que user._id es un string
-    { enabled: !!user._id } // Habilitar la consulta solo si user._id está definido
-  );
+  const cacheKey = 'followingPosts';
 
-  useEffect(() => console.log(data), [data])
+  const { data, error, status, isFetchingNextPage, hasNextPage, lastPostElementRef, fetchNextPage } = useInfiniteScroll({
+    cacheKey,
+    fetchFunction: fetchFollowingPosts,
+    additionalParams: { userId }
+  });
 
-  if (isLoading) return <Loader />;
+  if (status === 'loading') return <Loader />;
 
   if (error) return <div>Error: {error.message}</div>;
 
-  if (!data || data.length === 0) return <div className='px-5 py-3 text-center dark:text-neutral-600 text-slate-500'>No posts to show in following tab. Start following people or wait until they post something!</div>;
+  const isEmpty = !data || data.pages.every(page => page.length === 0);
+
+  if (isEmpty) return <div className='px-5 py-3 text-center dark:text-neutral-600 text-slate-500'>No posts to show. Start posting something!</div>;
 
   return (
     <div role='main' className='w-full'>
-      {data?.map((post: PostType, i: number) => (
-        <Post key={i} {...post} />
+      {data?.pages.map((page, i) => (
+        <React.Fragment key={i}>
+          {page.map((post: PostType, j: number) => (
+            <Post key={post._id} {...post} ref={j === page.length - 1 ? lastPostElementRef : null} />
+          ))}
+        </React.Fragment>
       ))}
+      {isFetchingNextPage && <Loader />}
     </div>
   );
 };
 
-export default FollowingPosts
+export default FollowingPosts;

@@ -58,7 +58,6 @@ const useComposePost = () => {
       comments: [],
       saved: [],
       whoCanReply: replyOption,
-      viewedBy: [],
       repostedBy: []
     };
 

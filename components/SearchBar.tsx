@@ -1,7 +1,7 @@
 "use client"
 
 import React, { useEffect, useRef, useState } from 'react'
-import { IoSearchOutline } from 'react-icons/io5';
+import { IoSearchOutline } from '@/constants/icons'
 
 const SearchBar = () => {
   const SearchContainerRef = useRef<HTMLDivElement | null>(null);

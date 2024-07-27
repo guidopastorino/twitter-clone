@@ -1,7 +1,7 @@
 "use client"
 
 import React from 'react'
-import { BsGear } from 'react-icons/bs'
+import { BsGear } from '@/constants/icons'
 import { useModal } from '@/hooks/useModal'
 import FeedOptions from '@/components/RouteModals/FeedOptions'
 import useActiveTab from '@/hooks/useActiveTab'
